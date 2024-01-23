@@ -7,7 +7,7 @@ const CronJob = require("cron").CronJob;
 const app = express();
 const port = process.env.PORT || 3000;
 
-const email = ["simplyarsa15@gmail.com", "not_arsalan@outlook.com"]
+const email = ["simplyarsa15@gmail.com", "not_arsalan@outlook.com", "mdnoor20205@gmail.com", "hammadfaza12345@gmail.com"]
 const api_url ="https://zenquotes.io/api/today/";
 
 const transporter = nodemailer.createTransport({
