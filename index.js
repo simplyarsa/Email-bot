@@ -40,7 +40,7 @@ async function main() {
   console.log("Message sent: %s", info.messageId);
 }
 
-const cronMail = new CronJob("0 30 1 * *", async () => {
+const cronMail = new CronJob("0 30 1 * * *", async () => {
     console.log("Sending message....")
     await main().catch(console.error);
 });
