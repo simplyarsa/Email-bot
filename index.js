@@ -7,7 +7,7 @@ const CronJob = require("cron").CronJob;
 const app = express();
 const port = process.env.PORT || 3000;
 
-const email = ["simplyarsa15@gmail.com", "not_arsalan@outlook.com"]
+const email = ["simplyarsa15@gmail.com", "not_arsalan@outlook.com", "mdnoor20205@gmail.com", "hammadfaza12345@gmail.com"]
 const api_url ="https://zenquotes.io/api/today/";
 
 const transporter = nodemailer.createTransport({
@@ -40,7 +40,7 @@ async function main() {
   console.log("Message sent: %s", info.messageId);
 }
 
-const cronMail = new CronJob("0 30 1 * * *", async () => {
+const cronMail = new CronJob("0 0 14 * * *", async () => {
     console.log("Sending message....")
     await main().catch(console.error);
 });
@@ -56,9 +56,10 @@ app.get("/time", (req, res) => {
     let d = new Date()
     let h = d.getHours()
     let m = d.getMinutes()
+    console.log(h, m)
     res.send(`Time is ${h} ${m}`);
 })
 
 app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`);
+    console.log(`Example app listening at http://localhost:${port}`);
 });
